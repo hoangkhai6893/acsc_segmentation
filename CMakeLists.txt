@@ -3,8 +3,9 @@ project(RegionGrowingSegmentation)
 set(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(pybind11)
-include_directories(/usr/include/python3.6)
-find_package(PCL REQUIRED)
+include_directories(/usr/include/python3.8)
+include_directories(/usr/include/pcl-1.10)
+find_package(PCL 1.10 REQUIRED COMPONENTS common io visualization)
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
